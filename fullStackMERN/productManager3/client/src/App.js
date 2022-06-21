@@ -1,12 +1,12 @@
 import './App.css';
-import Main from './Main';
+import Main from './views/Main';
 import {
   BrowserRouter,
   Switch,
   Route
 } from "react-router-dom";
-import Display from './components/Display';
-import Edit from './components/Edit';
+import Display from './views/Display';
+import Edit from './views/Edit';
 function App() {
   return (
     <BrowserRouter>

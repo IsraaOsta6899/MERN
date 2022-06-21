@@ -1,5 +1,6 @@
 import React from 'react'
 import { useHistory } from "react-router-dom";
+import DeleteButton from './DeleteButton';
 const List = (props) => {
     const history = useHistory();
     const pushToAnotherLink=(id)=>{
@@ -7,11 +8,13 @@ const List = (props) => {
     }
     return (
         <div>
-            <h1>All Products :</h1>
-            
-            
+            <h1>All Products :</h1>           
             { props.AllProducts.map( (item, i) => 
-                <div><a  onClick={()=>pushToAnotherLink(item._id)}>{ item.title }</a><br></br></div> ) }
+                <div><a  onClick={()=>pushToAnotherLink(item._id)}>{ item.title }</a><br></br>
+                <DeleteButton productId={item._id} successCallback={()=>{
+                    history.push('/')
+                }} />
+                </div> ) }
              
         </div>
     )
